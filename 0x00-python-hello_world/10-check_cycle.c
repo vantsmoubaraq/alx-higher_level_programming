@@ -10,11 +10,6 @@ int check_cycle(listint_t *list)
 {
 	listint_t *tmp,*first;
 
-	if(!list)
-	{
-		return (NULL);
-	}
-
 	first = list;
 	tmp = list;
 	while(tmp)
