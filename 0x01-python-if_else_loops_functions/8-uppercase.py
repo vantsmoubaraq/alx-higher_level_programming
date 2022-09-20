@@ -3,9 +3,9 @@
 def uppercase(str):
     new_str = ''
     for letter in str:
-        if(ord(letter) in range(ord('a'),ord('z'))):
-                letter = chr(ord(letter)-(ord('a')-ord('A')))
-                new_str += letter
+        if(ord(letter) in range(ord('a'), ord('z'))):
+            letter = chr(ord(letter)-(ord('a')-ord('A')))
+            new_str += letter
         else:
             new_str += letter
-    print(f"{new_str}")
+    print("{:s}".format(new_str))
