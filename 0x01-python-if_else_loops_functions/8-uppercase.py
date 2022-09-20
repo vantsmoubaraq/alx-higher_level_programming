@@ -3,7 +3,7 @@
 def uppercase(str):
     new_str = ''
     for letter in str:
-        if(ord(letter) in range(ord('a'), ord('z'))):
+        if(ord(letter) in range(ord('a'), ord('z')+1)):
             letter = chr(ord(letter)-(ord('a')-ord('A')))
             new_str += letter
         else:
