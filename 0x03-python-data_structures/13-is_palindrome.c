@@ -37,7 +37,7 @@ int is_palindrome(listint_t **head)
 		mid = length / 2;
 		while (m < mid)
 		{
-			if (data[m] != data[length-i-1])
+			if (data[m] != data[length-i])
 			{
 				break;
 				return (0);
