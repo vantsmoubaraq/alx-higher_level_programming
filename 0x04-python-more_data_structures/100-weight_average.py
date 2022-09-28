@@ -9,4 +9,4 @@ def weight_average(my_list=[]):
             weights += tuple[1]
 
         return (sum/weights)
-    return None
+    return 0
