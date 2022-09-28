@@ -6,9 +6,7 @@ def weight_average(my_list=[]):
 
         for tuple in my_list:
             sum += (tuple[0] * tuple[1])
-
-        for element in my_list:
-            weights += element[1]
+            weights += tuple[1]
 
         return (sum/weights)
     return None
