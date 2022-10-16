@@ -1,0 +1,139 @@
+============================================================
+5-text_indentation.txt
+============================================================
+
+``text_indentation(text)`` split string using given chars
+
+""" Import function """
+	>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+============================================================
+Documentation
+============================================================
+
+	>>> module_doc = __import__("5-text_indentation").__doc__
+	>>> print(len(module_doc) > 0)
+	True
+
+	>>> func_doc = __import__("5-text_indentation").text_indentation.__doc__
+	>>> print(len(func_doc) > 0)
+	True
+
+============================================================
+Success cases
+============================================================
+	>>> text_indentation("MVD. c15")
+	MVD.
+	<BLANKLINE>
+	c15
+
+	>>> text_indentation("Ronald?Rivero")
+	Ronald?
+	<BLANKLINE>
+	Rivero
+
+	>>> text_indentation("Hello. Pepa Pig. :)")
+	Hello.
+	<BLANKLINE>
+	Pepa Pig.
+	<BLANKLINE>
+	:
+	<BLANKLINE>
+	)
+
+	>>> text_indentation("Rony: Alex")
+	Rony:
+	<BLANKLINE>
+	Alex
+
+	>>> text_indentation("???")
+	?
+	<BLANKLINE>
+	?
+	<BLANKLINE>
+	?
+	<BLANKLINE>
+
+
+	>>> text_indentation("???:).:)")
+	?
+	<BLANKLINE>
+	?
+	<BLANKLINE>
+	?
+	<BLANKLINE>
+	:
+	<BLANKLINE>
+	).
+	<BLANKLINE>
+	:
+	<BLANKLINE>
+	)
+
+	>>> text_indentation(".")
+	.
+	<BLANKLINE>
+
+	>>> text_indentation("El hipopótamo Hipo está con hipo, ¿quién le quita el hipo al hipopótamo Hipo?")
+	El hipopótamo Hipo está con hipo, ¿quién le quita el hipo al hipopótamo Hipo?
+	<BLANKLINE>
+
+	>>> text_indentation("El hipopótamo Hipo está con hipo.. :quién le quita el hipo al hipopótamo Hipo?")
+	El hipopótamo Hipo está con hipo.
+	<BLANKLINE>
+	.
+	<BLANKLINE>
+	:
+	<BLANKLINE>
+	quién le quita el hipo al hipopótamo Hipo?
+	<BLANKLINE>
+
+	>>> text_indentation("El hipopótamo Hipo está con hipo, ¿quién le quita el hipo al hipopótamo Hipo?")
+	El hipopótamo Hipo está con hipo, ¿quién le quita el hipo al hipopótamo Hipo?
+	<BLANKLINE>
+
+	>>> text_indentation(".:$90.")
+	.
+	<BLANKLINE>
+	:
+	<BLANKLINE>
+	$90.
+	<BLANKLINE>
+
+	>>> text_indentation("{12: 10}")
+	{12:
+	<BLANKLINE>
+	10}
+
+	============================================================
+	error cases
+	============================================================
+	>>> text_indentation()
+	Traceback (most recent call last):
+	...
+	TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+	>>> text_indentation({98.4: 12})
+	Traceback (most recent call last):
+	...
+	TypeError: text must be a string
+
+	>>> text_indentation((98.4, 12))
+	Traceback (most recent call last):
+	...
+	TypeError: text must be a string
+
+	>>> text_indentation(None)
+	Traceback (most recent call last):
+	...
+	TypeError: text must be a string
+
+	>>> text_indentation(98)
+	Traceback (most recent call last):
+	...
+	TypeError: text must be a string
+
+	>>> text_indentation(98.4)
+	Traceback (most recent call last):
+	...
+	TypeError: text must be a string

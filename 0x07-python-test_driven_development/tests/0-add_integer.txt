@@ -1,0 +1,150 @@
+-===========================
+0-add_integer.py Module
+============================
+
+This function adds two integer: a and b. Both must be floats or integers.
+If an TypeError is raised must display error message.
+How to import from module:
+
+	>>> add_integer = __import__('0-add_integer').add_integer
+
+===========================
+Documentation
+===========================
+
+	>>> module_doc = __import__("0-add_integer").__doc__
+	>>> print(len(module_doc) > 0)
+	True
+
+	>>> func_doc = __import__("0-add_integer").add_integer.__doc__
+	>>> print(len(func_doc) > 0)
+	True
+
+===========================
+Requiriments: arguments
+===========================
+
+``add_integer()`` takes two arguments pased in main function and return adition.
+both must be numbers type int or float and typecast to int. Use the ``+`` operator.
+
+SUCCESS CASES
+=============================================
+one digit
+=============================================
+	>>> add_integer(2, 2)
+	4
+
+	>>> add_integer(0, 0)
+	0
+
+=============================================
+Combining int and float digits
+=============================================
+	>>> add_integer(100, 1024)
+	1124
+
+	>>> add_integer(100.1, 1024.000099)
+	1124
+
+	>>> add_integer(100, 1024.000099)
+	1124
+
+=============================================
+default value of b
+=============================================
+	>>> add_integer(0)
+	98
+
+	>>> add_integer(-98)
+	0
+
+=============================================
+Int max and min
+=============================================
+	>>> add_integer(2147483647, 0)
+	2147483647
+
+	>>> add_integer(-2147483648, 0)
+	-2147483648
+
+	>>> add_integer(2147483647, -2147483647)
+	0
+
+	>>> add_integer(-2147483648, 2147483647)
+	-1
+
+=============================================
+Negative numbers
+=============================================
+	>>> add_integer(-100010, -5)
+	-100015
+
+	>>> add_integer(-5555, 4444)
+	-1111
+
+	>>> add_integer(-99, -99)
+	-198
+
+	>>> add_integer(-1024, -256)
+	-1280
+
+=============================================
+Floats and typecasting before adding
+=============================================
+	>>> add_integer(100.3, -2)
+	98
+
+	>>> add_integer(100.2, 100.2)
+	200
+
+	>>> add_integer(100.9, 100.9)
+	200
+
+=======================================================
+TypeErrors raise error if a or b are not int or float
+=======================================================
+	>>> add_integer(4, "School")
+	Traceback (most recent call last):
+	TypeError: b must be an integer
+
+	>>> add_integer("School", 4)
+	Traceback (most recent call last):
+	TypeError: a must be an integer
+
+	>>> add_integer("Ronald", "Alexander")
+	Traceback (most recent call last):
+	TypeError: a must be an integer
+
+	>>> add_integer([1, 2, 3], 4)
+	Traceback (most recent call last):
+	TypeError: a must be an integer
+
+	>>> add_integer((1, 2, 3), 4)
+	Traceback (most recent call last):
+	TypeError: a must be an integer
+
+=======================================================
+If None as input
+=======================================================
+	>>> add_integer(None)
+	Traceback (most recent call last):
+	TypeError: a must be an integer
+
+=======================================================
+Infinity
+=======================================================
+	>>> add_integer(float('inf'))
+	Traceback (most recent call last):
+	OverflowError: cannot convert float infinity to integer
+
+	>>> add_integer(6, float('inf'))
+	Traceback (most recent call last):
+	OverflowError: cannot convert float infinity to integer
+
+	>>> add_integer(-float('inf'), 9)
+	Traceback (most recent call last):
+	OverflowError: cannot convert float infinity to integer
+
+	>>> add_integer(float('NaN'), 7)
+	Traceback (most recent call last):
+	ValueError: cannot convert float NaN to integer

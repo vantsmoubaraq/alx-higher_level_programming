@@ -1,0 +1,155 @@
+============================================================
+3-say_my_name.py
+============================================================
+
+``say_my_name()``  display "My name is"
+followed optional last name
+
+""" Import function """
+
+	>>> say_my_name = __import__("3-say_my_name").say_my_name
+
+============================================================
+Documentation
+============================================================
+
+	>>> module_doc = __import__("3-say_my_name").__doc__
+	>>> print(len(module_doc) > 0)
+	True
+
+	>>> func_doc = __import__("3-say_my_name").say_my_name.__doc__
+	>>> print(len(func_doc) > 0)
+	True
+
+============================================================
+Strings
+============================================================
+The first and last name inputs must be strings
+
+	>>> say_my_name("Ronald", "Alexander")
+	My name is Ronald Alexander
+
+	>>> say_my_name("Juan", "Jose")
+	My name is Juan Jose
+
+	>>> say_my_name("Bob", "Sponge")
+	My name is Bob Sponge
+
+	>>> say_my_name("Bob")
+	My name is Bob 
+
+	>>> say_my_name("Michael")
+	My name is Michael 
+
+	>>> say_my_name(" ", "Holberton")
+	My name is   Holberton
+
+	>>> say_my_name("School", " ")
+	My name is School  
+
+	>>> say_my_name("", "")
+	My name is  
+
+	>>> say_my_name("Ronald", "")
+	My name is Ronald 
+
+	>>> say_my_name("", "Alexander")
+	My name is  Alexander
+
+	>>> say_my_name("R", "R")
+	My name is R R
+
+	>>> say_my_name("    ", "    ")
+	My name is          
+
+	>>> say_my_name(" ", " ")
+	My name is    
+
+============================================================
+chars
+============================================================
+	>>> say_my_name('R', 'R')
+	My name is R R
+
+	>>> say_my_name("Ronald", 'R')
+	My name is Ronald R
+
+	>>> say_my_name('R', "Rivero")
+	My name is R Rivero
+
+============================================================
+error cases
+============================================================
+============================================================
+Miss args
+============================================================
+	>>> say_my_name()
+	Traceback (most recent call last):
+	TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+============================================================
+Integers and Floats
+============================================================
+	>>> say_my_name("Rony", 12)
+	Traceback (most recent call last):
+	TypeError: last_name must be a string
+
+	>>> say_my_name("Ronald", 12)
+	Traceback (most recent call last):
+	TypeError: last_name must be a string
+
+	>>> say_my_name("Ronald", 12.5)
+	Traceback (most recent call last):
+	TypeError: last_name must be a string
+
+	>>> say_my_name(12, "Rivero")
+	Traceback (most recent call last):
+	TypeError: first_name must be a string
+
+	>>> say_my_name(12.5, "Rivero")
+	Traceback (most recent call last):
+	TypeError: first_name must be a string
+
+============================================================
+misc Data Structures
+============================================================
+
+      	>>> say_my_name(['R', 'R'], "Rivero")
+	Traceback (most recent call last):
+	TypeError: first_name must be a string
+
+      	>>> say_my_name(('R', 'R'), "Rivero")
+	Traceback (most recent call last):
+	TypeError: first_name must be a string
+
+      	>>> say_my_name(['R', 'R'], 'R')
+	Traceback (most recent call last):
+	TypeError: first_name must be a string
+
+      	>>> say_my_name("Ronald", ['R', 'R'])
+	Traceback (most recent call last):
+	TypeError: last_name must be a string
+
+      	>>> say_my_name("Ronald", ('R', 'R'))
+	Traceback (most recent call last):
+	TypeError: last_name must be a string
+
+============================================================
+Passing in None
+============================================================
+      	>>> say_my_name(None)
+	Traceback (most recent call last):
+	TypeError: first_name must be a string
+
+	>>> say_my_name(None, None)
+	Traceback (most recent call last):
+	TypeError: first_name must be a string
+
+	>>> say_my_name("Ronald", None)
+	Traceback (most recent call last):
+	TypeError: last_name must be a string
+
+	>>> say_my_name(None, "Rivero")
+	Traceback (most recent call last):
+	TypeError: first_name must be a string
+
