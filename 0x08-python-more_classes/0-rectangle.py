@@ -6,4 +6,5 @@
 
 
 class Rectangle:
+    """Empty Representation of a Rectangle"""
     pass
