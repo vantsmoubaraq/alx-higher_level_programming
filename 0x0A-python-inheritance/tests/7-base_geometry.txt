@@ -1,0 +1,30 @@
+This is a test for 7-base_geometry
+
+>>> BG = __import__("7-base_geometry").BaseGeometry
+
+>>> m = __import__("7-base_geometry").__doc__
+
+>>> len(m) > 0
+True
+
+>>> c = __import__("7-base_geometry").BaseGeometry.__doc__
+
+>>> len(c) > 0
+True
+
+>>> bg = BG()
+
+>>> bg.area()
+Traceback (most recent call last):
+...
+Exception: area() is not implemented
+
+>>> bg.integer_validator("name", "Mubarak")
+Traceback (most recent call last):
+...
+TypeError: name must be an integer
+
+>>> bg.integer_validator("age", -2)
+Traceback (most recent call last):
+...
+ValueError: age must be greater than 0

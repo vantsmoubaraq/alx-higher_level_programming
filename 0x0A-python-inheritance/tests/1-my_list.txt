@@ -1,0 +1,14 @@
+This is the test for the 1-my_list module
+
+>>> MyList = __import__("1-my_list").MyList
+
+>>> numbers = MyList()
+
+>>> numbers.append(4)
+
+>>> numbers.append(1)
+
+>>> numbers.append(7)
+
+>>> numbers.print_sorted()
+[1, 4, 7]
