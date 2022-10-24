@@ -1,15 +1,14 @@
-#!usr/bin/python3
+#!/usr/bin/python3
+""" MyInt module"""
 
-""" class MyInt that inherits from int"""
 
-class MyInt(Int):
-    """Implement a rebel int class"""
-    def __new__(cls, *args, *kwargs):
-        return (super(MyInt, cls).__new__(cls, *args, *kwargs))
+class MyInt(int):
+    """ class MyInt that inherits from int"""
 
-    de __eq__(self, other):
-        return int(self) != other
+    def __ne__(self, next):
+        """ negation to equal """
+        return super().__eq__(next)
 
-    def __ne__(self , other):
-        return int(self) != other
-
+    def __eq__(self, next):
+        """ equal to negation """
+        return super().__ne__(next)
