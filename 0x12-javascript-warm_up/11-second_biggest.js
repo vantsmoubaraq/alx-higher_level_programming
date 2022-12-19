@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-let i; let num; const numbers = []; let sortedNumbers;
+let i;
 const args = process.argv;
 const numArgs = process.argv.length;
 
@@ -8,9 +8,7 @@ if (numArgs <= 3) {
   console.log(0);
 } else {
   for (i = 2; i < numArgs; i++) {
-    num = parseInt(args[i]);
-    numbers.push(num);
+    parseInt(args[i]);
   }
-  sortedNumbers = numbers.sort();
-  console.log(sortedNumbers[sortedNumbers.length - 2]);
+  console.log(args.sort()[numArgs - 2]);
 }
