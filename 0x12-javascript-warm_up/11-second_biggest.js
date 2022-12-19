@@ -1,19 +1,25 @@
 #!/usr/bin/node
 
-let i; let num; const numbers = [];
-const args = process.argv;
-const numArgs = process.argv.length;
+const entry = process.argv;
+const toOrder = [];
+let check;
 
-if (numArgs <= 3) {
+function secBig () {
+  const x = toOrder.length;
+  toOrder.sort(function (a, b) { return a - b; });
+  console.log(toOrder[x - 2]);
+}
+
+if (entry.length <= 3) {
   console.log(0);
 } else {
-  for (i = 2; i < numArgs; i++) {
-    num = parseInt(args[i]);
-    if (isNaN(num)) {
+  for (let i = 2; i < entry.length; i++) {
+    check = parseInt(entry[i]);
+    if (isNaN(check)) {
       continue;
     } else {
-      numbers.push(num);
+      toOrder.push(check);
     }
   }
-  console.log(numbers.sort()[numbers.length - 2]);
+  secBig();
 }
