@@ -1,8 +1,8 @@
 #!/usr/bin/node
 
-var args = process.argv
+var args = process.argv;
 
-function add(a, b) {
+function add (a, b) {
   return (a + b);
 }
 
