@@ -19,8 +19,8 @@ if __name__ == "__main__":
                            passwd=password, db=db, charset="utf8")
     session = conn.cursor()
 
-    session.execute('''SELECT * FROM states WHERE name LIKE "N%" ORDER BY
-                    states.id''')
+    session.execute("""SELECT * FROM states WHERE name LIKE BINARY "N%" ORDER BY
+                    states.id""")
 
     states = session.fetchall()
 
