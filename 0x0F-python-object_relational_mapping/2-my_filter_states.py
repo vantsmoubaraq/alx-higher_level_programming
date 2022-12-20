@@ -21,8 +21,8 @@ if __name__ == "__main__":
                            passwd=password, db=db, charset="utf8")
     session = conn.cursor()
 
-    session.execute("""SELECT * FROM states WHERE name="{}" ORDER BY
-                    states.id""".format(searched))
+    session.execute("""SELECT * FROM states WHERE name LIKE BINARY "{}" ORDER
+                    BY states.id""".format(searched))
 
     states = session.fetchall()
 
