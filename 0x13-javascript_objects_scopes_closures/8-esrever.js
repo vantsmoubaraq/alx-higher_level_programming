@@ -7,4 +7,4 @@ exports.esrever = function (list) {
     reversed.push(current);
   }
   return (reversed);
-}
+};
