@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 '''
-takes in the name of a state as an argument 
+takes in the name of a state as an argument
 '''
 
 import MySQLdb

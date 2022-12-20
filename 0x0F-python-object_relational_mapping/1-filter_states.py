@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 """
-Module  lists all states with a name starting with N (upper N) 
+Module  lists all states with a name starting with N (upper N)
 """
 
 import MySQLdb
