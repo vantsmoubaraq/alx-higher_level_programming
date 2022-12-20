@@ -1,9 +1,16 @@
 #!/usr/bin/python3
 
+'''
+takes in the name of a state as an argument 
+'''
+
 import MySQLdb
 from sys import argv
 
 if __name__ == "__main__":
+    '''
+    not be executed when imported
+    '''
     user = argv[1]
     password = argv[2]
     db = argv[3]

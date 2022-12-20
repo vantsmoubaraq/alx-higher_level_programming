@@ -1,9 +1,17 @@
 #!/usr/bin/python3
 
+"""
+ takes in an argument and displays all values in the states 
+ where name matches the argument.
+"""
+
 import MySQLdb
 from sys import argv
 
 if __name__ == "__main__":
+    """
+    Not executed when imported
+    """
     user = argv[1]
     password = argv[2]
     db = argv[3]

@@ -8,7 +8,7 @@ import MySQLdb
 from sys import argv
 
 if __name__ == "__main__":
-    """executed when imported"""
+    """Not executed when imported"""
     user = argv[1]
     password = argv[2]
     db = argv[3]
