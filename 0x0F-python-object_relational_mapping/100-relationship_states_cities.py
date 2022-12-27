@@ -1,33 +1,29 @@
 #!/usr/bin/python3
 """
-creates the State “California” with the City “San Francisco” from the database
+Creates `State` California with `City` San Francisco
+from database `hbtn_0e_100_usa
+Usage: ./10-mode_state_my_get.py <mysql username>
+                                 <mysql password>
+                                 <database name>
+                                 <name searched>
 """
 from sys import argv
-from relationship_state import Base, State
-from relationship_city import City
-from sqlalchemy import (create_engine)
-from sqlalchemy.orm import Session
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+from relationship_city import City, Base
+from relationship_state import State
 
 if __name__ == "__main__":
-    username = argv[1]
-    password = argv[2]
-    database = argv[3]
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
+                           .format(argv[1], argv[2], argv[3]),
+                           pool_pre_ping=True)
 
-    engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'.format(
-                           username,
-                           password,
-                           database),
-                           pool_pre_ping=True
-                           )
     Base.metadata.create_all(engine)
-    session = Session(engine)
 
-    new_state = "California"
-    new_city = "San Francisco"
-    newState = State(name=new_state)
-    newCity = City(name=new_city, state=newState)
+    Session = sessionmaker(bind=engine)
+    session = Session()
 
+    newState = State(name='California')
+    newState.cities = [City(name='San Francisco')]
     session.add(newState)
-    session.add(newCity)
     session.commit()
-    session.close()
