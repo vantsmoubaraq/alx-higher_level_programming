@@ -2,10 +2,6 @@
 """
     Fetches https://intranet.hbtn.io/status
     using package 'requests'
-
-    Body response:$
-    - type: <class 'str'>$
-    - content: OK$
 """
 
 import requests
